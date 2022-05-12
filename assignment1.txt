@@ -22,3 +22,5 @@ SELECT * FROM fixtures;
 SELECT * from team_details where team_name='RCB' and home_ground='Bangalore';
 
 select team_lost from fixtures where venue='Kolkata';
+
+changes made for milestone 10
