@@ -1,0 +1,24 @@
+CREATE TABLE Team_Details ( slno INT ,Team_Name VARCHAR(30),captain VARCHAR(30),owner VARCHAR(30),Home_Ground VARCHAR(30),PRIMARY KEY(Team_Name)
+						   
+)
+CREATE TABLE Fixtures (match_number int, home_team VARCHAR(30),away_team VARCHAR(30),venue varchar(30), team_won varchar(30),team_lost varchar(30)
+)
+CREATE TABLE Points (Team_Name VARCHAR(30),no_of_wins INT,no_of_losses int,points int,FOREIGN KEY(Team_Name) REFERENCES team_details(Team_Name)
+)
+COPY team_details(slno,team_name,captain,owner,home_ground)
+FROM 'C:\team-details1.csv'
+DELIMITER ','
+CSV HEADER
+
+SELECT * FROM team_details;
+SELECT COUNT(team_name) from team_details;
+COPY fixtures(match_number,home_team,away_team,venue,team_won,team_lost)
+FROM 'C:\fixtures1.csv'
+DELIMITER ','
+CSV HEADER
+
+SELECT * FROM fixtures;
+
+SELECT * from team_details where team_name='RCB' and home_ground='Bangalore';
+
+select team_lost from fixtures where venue='Kolkata';
